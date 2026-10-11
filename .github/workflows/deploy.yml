@@ -1,7 +1,8 @@
-name: Build and publish site
+name: Publish redirect
 
-# Runs on every push to the master branch (e.g. after editing tresc.md),
-# and manually from the Actions tab.
+# Treść wyprawy przeniosła się do repo matisnape/cycling_trips.
+# To repo zostaje jako archiwum historii, a publikuje już tylko przekierowanie
+# ze starego adresu na https://anks.pl/cycling_trips/rumunia-2026/.
 on:
   push:
     branches: [master]
@@ -12,41 +13,25 @@ permissions:
   pages: write
   id-token: write
 
-# Don't run multiple deployments at the same time.
 concurrency:
   group: pages
   cancel-in-progress: true
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - name: Install dependencies
-        run: pip install markdown
-
-      - name: Build site from tresc.md
-        run: python build.py
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: strona
-
   deploy:
-    needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: przekierowanie
+
       - name: Publish to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
