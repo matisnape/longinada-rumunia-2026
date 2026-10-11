@@ -1,8 +1,8 @@
 name: Publish redirect
 
-# Treść wyprawy przeniosła się do repo matisnape/cycling_trips.
-# To repo zostaje jako archiwum historii, a publikuje już tylko przekierowanie
-# ze starego adresu na https://anks.pl/cycling_trips/rumunia-2026/.
+# The trip's content moved to the repo matisnape/cycling_trips.
+# This repo stays as an archive of the history; all it publishes now is a redirect
+# from the old address to https://anks.pl/cycling_trips/rumunia-2026/.
 on:
   push:
     branches: [master]
@@ -30,7 +30,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: przekierowanie
+          path: redirect
 
       - name: Publish to GitHub Pages
         id: deployment

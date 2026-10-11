@@ -1,11 +1,11 @@
 # "Cienie Austro-Węgier" trip site — user guide
 
-> **To repo jest archiwum.** Treść wyprawy i jej historia przeniosły się do
-> [matisnape/cycling_trips](https://github.com/matisnape/cycling_trips), gdzie
-> mieszka w `trips/rumunia-2026/`. Strona stoi teraz pod
-> <https://anks.pl/cycling_trips/rumunia-2026/>, a stary adres tylko tam przekierowuje
-> (katalog `przekierowanie/`). Instrukcja niżej opisuje stan sprzed przeprowadzki —
-> edytuj wyprawę w nowym repo.
+> **This repo is an archive.** The trip's content and its history moved to
+> [matisnape/cycling_trips](https://github.com/matisnape/cycling_trips), where it
+> lives in `trips/rumunia-2026/`. The site is now served from
+> <https://anks.pl/cycling_trips/rumunia-2026/>, and the old address only redirects there
+> (the `redirect/` directory). The guide below describes the state before the move —
+> edit the trip in the new repo.
 
 This repository turns **a single notes file** (`tresc.md`) into a finished site:
 a home page with the route map, 9 day subpages, and a sources page.
